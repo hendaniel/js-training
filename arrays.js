@@ -13,4 +13,18 @@ const generateArray = (length, max) => {
     })
 }
 
-console.log(generateArray(5, 3));
+//console.log(generateArray(5, 3));
+
+
+const capsLocks = (word) => {
+    const upperCase = /^[A-ZÑ]+$/g;
+
+    if (upperCase.test(word))
+        return word.charAt(0) + word.slice(1).toLowerCase();
+    else if (upperCase.test(word.slice(1)) && !upperCase.test(word.charAt(0)))
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    else
+        return word;
+}
+
+console.log(capsLocks("dANIEL"))
