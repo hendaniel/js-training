@@ -11,13 +11,17 @@ readline.on('line', line => {
 const capsLocks = (word) => {
     const upperCase = /^[A-ZÑ]+$/g;
 
-    if (word.length > 1)
+    if (word.length > 1) {
+        const first = word.charAt(0);
+        const last = word.slice(1);
+
         if (upperCase.test(word))
             return word.toLowerCase();
-        else if (upperCase.test(word.slice(1)) && !upperCase.test(word.charAt(0)))
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        else if (upperCase.test(last) && !upperCase.test(first))
+            return first.toUpperCase() + last.toLowerCase();
         else
             return word;
+    }
     else
         if (!upperCase.test(word))
             return word.toUpperCase();
