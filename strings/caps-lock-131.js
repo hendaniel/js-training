@@ -1,5 +1,6 @@
-"use strict";
-
+/**
+ * @see http://codeforces.com/contest/131/problem/A
+ */
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
